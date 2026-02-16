@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metropolitan University — Uni Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="bg"></div>
+
+  <main class="wrap">
+    <section class="card">
+      <header class="brand">
+        <img class="logo" src="logo.png" alt="Metropolitan University Logo" />
+        <div class="brandText">
+          <h1 class="title">Uni Hub</h1>
+          <p class="subtitle">Metropolitan University</p>
+        </div>
+      </header>
+
+      <!-- ROLE SELECTION -->
+      <div id="roleSelect">
+        <h2 class="h2">Enter Your Identity to login</h2>
+
+        <div class="roleGrid">
+          <button class="roleBtn" data-role="Student" type="button">Student</button>
+          <button class="roleBtn" data-role="Faculty" type="button">Faculty</button>
+          <button class="roleBtn" data-role="Office" type="button">Office</button>
+          <button class="roleBtn" data-role="Authority" type="button">Authority</button>
+        </div>
+
+        <p class="muted">Select your role to continue.</p>
+      </div>
+
+      <!-- AUTH SECTION -->
+      <div id="authSection" class="hidden">
+        <div class="roleBar">
+          <span class="pill" id="selectedRoleText">Role: </span>
+          <button id="backBtn" class="ghostBtn" type="button">← Back</button>
+        </div>
+
+        <div class="tabs">
+          <button class="tab active" id="tabLogin" type="button">Login</button>
+          <button class="tab" id="tabSignup" type="button">Signup</button>
+        </div>
+
+        <!-- LOGIN -->
+        <form id="loginForm" class="form">
+          <label class="label">
+            Email
+            <input class="input" type="email" id="loginEmail" placeholder="you@example.com" required />
+          </label>
+
+          <label class="label">
+            Password
+            <input class="input" type="password" id="loginPass" placeholder="••••••••" required minlength="6" />
+          </label>
+
+          <button class="btn" type="submit">Login</button>
+        
+        </form>
+
+        <!-- SIGNUP -->
+        <form id="signupForm" class="form hidden">
+          <label class="label">
+            Full Name
+            <input class="input" type="text" id="signupName" placeholder="Your name" required />
+          </label>
+
+          <label class="label">
+            Email
+            <input class="input" type="email" id="signupEmail" placeholder="you@example.com" required />
+          </label>
+
+          <label class="label">
+            Password
+            <input class="input" type="password" id="signupPass" placeholder="Minimum 6 characters" required minlength="6" />
+          </label>
+
+          <button class="btn" type="submit">Create Account</button>
+          <p class="muted">We’ll store users in DB later.</p>
+        </form>
+
+        <p id="msg" class="msg" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

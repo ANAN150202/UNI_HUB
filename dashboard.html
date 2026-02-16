@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uni Hub — Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+
+  <!-- TOP NAV -->
+  <header class="topbar">
+    <div class="topbar__left">
+      <img class="mu-logo" src="logo.png" alt="Metropolitan University" />
+      <span class="brand">Uni Hub</span>
+    </div>
+
+    <div class="topbar__search">
+      <input id="searchInput" type="text" placeholder="Search clubs, posts, people…" />
+      <button id="searchBtn" class="iconBtn" title="Search">🔍</button>
+    </div>
+
+    <nav class="topbar__icons">
+      <button class="iconBtn active" data-page="home" title="Home">🏠</button>
+      <button class="iconBtn" data-page="clubs" title="Clubs">🏛️</button>
+      <button class="iconBtn" data-page="notifs" title="Notifications">
+        🔔 <span id="notifBadge" class="badge">3</span>
+      </button>
+      <button class="iconBtn" data-page="profile" title="Profile">👤</button>
+      <button id="menuBtn" class="iconBtn" title="Menu">☰</button>
+    </nav>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <aside id="drawer" class="drawer">
+    <div class="drawer__head">
+      <div class="drawer__title">Menu</div>
+      <button id="closeDrawer" class="iconBtn">✕</button>
+    </div>
+
+    <div class="drawer__items">
+      <button class="drawerItem" data-nav="home">🏠 Home</button>
+      <button class="drawerItem" data-nav="clubs">🏛️ Clubs & Societies</button>
+      <button class="drawerItem" data-nav="messages">💬 Messages</button>
+      <button class="drawerItem" data-nav="notifs">🔔 Notifications</button>
+      <button class="drawerItem" data-nav="settings">⚙️ Settings</button>
+      <button class="drawerItem danger" data-nav="logout">⏻ Logout (demo)</button>
+    </div>
+  </aside>
+  <div id="backdrop" class="backdrop"></div>
+
+  <!-- MAIN LAYOUT -->
+  <main class="layout">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="left">
+      <div class="card miniProfile">
+        <div class="avatar">A</div>
+        <div>
+          <div class="name">Arafat Rafsun Fardin</div>
+          <div class="meta">Metropolitan University • CSE</div>
+        </div>
+      </div>
+
+      <div class="card navCard">
+        <button class="navItem active" data-nav="home">🏠 Home</button>
+        <button class="navItem" data-nav="clubs">🏛️ Clubs & Societies</button>
+        <button class="navItem" data-nav="events">📅 Events</button>
+        <button class="navItem" data-nav="resources">📚 Resources</button>
+        <button class="navItem" data-nav="settings">⚙️ Settings</button>
+      </div>
+
+      <div class="card quickCard">
+        <div class="cardTitle">Quick Actions</div>
+        <div class="quickGrid">
+          <button class="chip">➕ Create Post</button>
+          <button class="chip">🎯 Join Club</button>
+          <button class="chip">🗓️ Add Event</button>
+          <button class="chip">📌 Announcement</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- FEED -->
+    <section class="center">
+
+      <!-- composer -->
+      <div class="card composer">
+        <div class="composerTop">
+          <div class="avatar small">A</div>
+          <input id="postInput" class="composerInput" placeholder="Share something with Metropolitan University…" />
+        </div>
+        <div class="composerActions">
+          <button class="pillBtn">🖼️ Photo</button>
+          <button class="pillBtn">🏛️ Club Post</button>
+          <button class="pillBtn primary">Post</button>
+        </div>
+      </div>
+
+      <!-- feed items -->
+      <div id="feed" class="feed">
+        <!-- JS will inject posts -->
+      </div>
+
+      <button id="loadMore" class="loadMore">Load more</button>
+    </section>
+
+    <!-- RIGHT PANEL -->
+    <aside class="right">
+      <div class="card notifCard">
+        <div class="cardTitle">
+          Notifications
+          <button id="markAll" class="linkBtn">Mark all read</button>
+        </div>
+
+        <div id="notifList" class="list">
+          <div class="listItem"><span class="dot"></span> CSE Society posted a new announcement.</div>
+          <div class="listItem"><span class="dot"></span> New event: “Career Seminar — IQAC”.</div>
+          <div class="listItem"><span class="dot"></span> Your post got 5 likes.</div>
+        </div>
+      </div>
+
+      <div class="card eventsCard">
+        <div class="cardTitle">Upcoming</div>
+        <div class="list">
+          <div class="listItem">📅 Sun • Club meeting • 4:00 PM</div>
+          <div class="listItem">📅 Mon • Lab task deadline • 11:59 PM</div>
+          <div class="listItem">📅 Thu • Seminar • 2:30 PM</div>
+        </div>
+      </div>
+
+      <div class="card clubsCard">
+        <div class="cardTitle">Clubs you may like</div>
+        <div class="clubRow">
+          <div class="clubBadge">CSE</div>
+          <div>
+            <div class="clubName">CSE Society</div>
+            <div class="clubMeta">Tech talks, contests</div>
+          </div>
+          <button class="miniBtn">Join</button>
+        </div>
+
+        <div class="clubRow">
+          <div class="clubBadge alt">MUIS</div>
+          <div>
+            <div class="clubName">Islamic Society</div>
+            <div class="clubMeta">Dars, charity, events</div>
+          </div>
+          <button class="miniBtn">Join</button>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- toast -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
